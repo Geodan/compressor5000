@@ -1,6 +1,6 @@
 # compressor5000
 
-Compresses 3D tiles almost 5000 times.
+Compresses 3D tiles (*.b3dm) almost 5000 times.
 
 Remarks:
 
@@ -15,6 +15,9 @@ Build:
 ```
 $ docker build -t bertt/compressor5000 .
 ```
+
+Run from folder where tileset.json is located.
+
 On Windows:
 
 ```
