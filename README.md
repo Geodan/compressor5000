@@ -14,30 +14,34 @@ This tool does the following:
 
     - Remove the temporary glb file
 
-Remarks:
+## Remarks
 
-- Input b3dm's will be overwritten
+- Input b3dm's will be overwritten;
 
-- B3dm batch information will be lost
+- B3dm batch information will be lost;
 
-Docker 
+- Running this tool multiple times will give an error.
 
-Build:
+## Docker 
+
+### Build
 
 ```
 $ docker build -t bertt/compressor5000 .
 ```
+
+### Run
 
 Run from folder where tileset.json is located.
 
 On Windows:
 
 ```
-$ docker run -v D:\dev\github.com\geodan\pg2b3dm\sample_data\delaware\mapbox\test\tiles:/tiles bertt/compressor5000
+$ docker run -v D:\dev\github.com\geodan\pg2b3dm\sample_data\delaware\mapbox\test\tiles:/tiles -it bertt/compressor5000
 ```
 
 On Linux:
 
 ```
-$ docker run -v $(pwd)/tiles:/tiles bertt/compressor5000
+$ docker run -v $(pwd)/tiles:/tiles -it bertt/compressor5000
 ```
