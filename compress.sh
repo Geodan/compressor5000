@@ -1,6 +1,5 @@
 #!/bin/bash
 cd tiles
-b3dm
 for entry in *.b3dm
 do
   echo "$entry"
