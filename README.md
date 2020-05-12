@@ -4,21 +4,19 @@ Compresses 3D tiles (*.b3dm) almost 5000 times using Google Draco (https://githu
 
 This tool does the following:
 
-- Loops through all b3dm files in subdirectory 'tiles', for each file do:
+- Loops through all b3dm files in currrent directory, for each file do:
 
-    - Unpack b3dm to glb file (using b3dm unpack)
+    - Unpack b3dm to glb file + batch table file (using b3dm unpack)
 
     - Run Draco compression (using gltf-pipeline)
 
     - Pack glb to b3dm file (using b3dm pack)
 
-    - Remove the temporary glb file
+    - Remove the temporary glb file and batch file
 
 ## Remarks
 
 - Input b3dm's will be overwritten;
-
-- B3dm batch information will be lost;
 
 - Running this tool multiple times will give an error.
 
@@ -32,7 +30,7 @@ $ docker build -t bertt/compressor5000 .
 
 ### Run
 
-Run from folder where tileset.json is located.
+Run from folder where b3dms are located.
 
 On Windows:
 
@@ -43,5 +41,5 @@ $ docker run -v D:\dev\github.com\geodan\pg2b3dm\sample_data\delaware\mapbox\tes
 On Linux:
 
 ```
-$ docker run -v $(pwd)/tiles:/tiles -it bertt/compressor5000
+$ docker run -v $(pwd):/tiles -it bertt/compressor5000
 ```
