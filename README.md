@@ -35,7 +35,7 @@ Run from folder where b3dms are located.
 On Windows:
 
 ```
-$ docker run -v D:\dev\github.com\geodan\pg2b3dm\sample_data\delaware\mapbox\test\tiles:/tiles -it bertt/compressor5000
+$ docker run -v D:\data\tiles:/tiles -it bertt/compressor5000
 ```
 
 On Linux:
