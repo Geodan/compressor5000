@@ -25,7 +25,7 @@ This tool does the following:
 ### Build
 
 ```
-$ docker build -t bertt/compressor5000 .
+$ docker build -t compressor5000 .
 ```
 
 ### Run
@@ -35,11 +35,11 @@ Run from folder where b3dms are located.
 On Windows:
 
 ```
-$ docker run -v D:\data\tiles:/tiles -it bertt/compressor5000
+$ docker run -v D:\data\tiles:/tiles -it compressor5000
 ```
 
 On Linux:
 
 ```
-$ docker run -v $(pwd):/tiles -it bertt/compressor5000
+$ docker run -v $(pwd):/tiles -it compressor5000
 ```
