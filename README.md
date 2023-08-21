@@ -32,14 +32,13 @@ $ docker build -t compressor5000 .
 
 Run from folder where b3dms are located.
 
-On Windows:
-
-```
-$ docker run -v D:\data\tiles:/tiles -it compressor5000
-```
-
-On Linux:
-
 ```
 $ docker run -v $(pwd):/tiles -it compressor5000
 ```
+
+## History
+
+2023-08-21: using parallel processes
+
+2020-05-08: Initial coding
+
