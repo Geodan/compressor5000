@@ -4,7 +4,7 @@ jobs=5
 
 cd tiles
 
-compress()
+compressB3dm()
 {
   entry=$1
   echo "$entry"
@@ -21,7 +21,18 @@ compress()
   fi
 }
 
-export -f compress
+compressGlb()
+{
+  entry=$1
+  echo "$entry"
+  gltf-pipeline -i "$entry" -o "$entry" -d -b
+}
 
+export -f compressB3dm
+export -f compressGlb
 
-find ./ -maxdepth 1 -type f -iname '*.b3dm' | parallel --bar -j ${jobs} compress
+echo Compressor5000 running with $jobs jobs
+echo "Find *.b3dm files and compress them..."
+find ./ -maxdepth 1 -type f -iname '*.b3dm' | parallel --bar -j ${jobs} compressB3dm
+echo "Find *.glb files and compress them..."
+find ./ -maxdepth 1 -type f -iname '*.glb' | parallel --bar -j ${jobs} compressGlb
