@@ -25,7 +25,7 @@ compressGlb()
 {
   entry=$1
   echo "$entry"
-  gltf-pipeline -i "$entry" -o "$entry" -d -b
+  gltf-pipeline -i "$entry" -o "$entry" -d -b --draco.quantizePositionBits 15
 }
 
 export -f compressB3dm
