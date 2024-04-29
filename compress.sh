@@ -10,7 +10,7 @@ compressB3dm()
   echo "$entry"
   b3dm unpack -i "$entry" -f
   filename="${entry%.*}"
-  gltf-pipeline -i "$filename".glb -o "$filename".glb -d -b
+  gltf-pipeline -i "$filename".glb -o "$filename".glb -d -b --draco.quantizePositionBits 15
   b3dm pack -i "$filename".glb -f
   rm "$filename".glb
   if [ -f "$filename".batchtable.json ]; then
