@@ -8,7 +8,7 @@ This tool does the following:
 
     - Unpack b3dm to glb file + batch table file (using b3dm unpack)
 
-    - Run Draco compression (using gltf-pipeline)
+    - Run Draco compression (using gltf-pipeline) 
 
     - Pack glb to b3dm file (using b3dm pack)
 
@@ -17,6 +17,8 @@ This tool does the following:
 - Loops through all glb files in currrent directory, for each file do:
 
     - Run Draco compression (using gltf-pipeline)
+
+When parameter -o (outlines) is true, the tool will use --draco.compressionLevel=0 to keep the outlines of the 3D tiles.
 
 ## Remarks
 
@@ -40,7 +42,15 @@ Run from folder where b3dms or glb files are located.
 $ docker run -v $(pwd):/tiles -it compressor5000
 ```
 
+To keep the outlines of the 3D tiles, use:
+
+```
+$ docker run -v $(pwd):/tiles -it compressor5000 -o true
+```
+
 ## History
+
+2024-05-17: added option to keep outlines of 3D Tiles (using draco.compressionLevel=0)
 
 2024-03-07: also compresses glb files
 
